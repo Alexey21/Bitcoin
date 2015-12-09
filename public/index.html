@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Bitcoin</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/angular.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+
+<div ng-controller="ctrl">
+	<div ng-show="!is_logged">
+		<input ng-model="login" placeholder="Bitcoin ID">
+		<input ng-model="password" placeholder="Password">
+		<button ng-click="get_balance()">Sign in</button>
+	</div>
+	[[balance]]
+</div>
+
+</body>
+</html>
